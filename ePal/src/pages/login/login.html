@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input [(ngModel)]="username" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Sementara cuma berfungsi ke home page -->
+  <button ion-button block (click)="goToHomePage()">Login</button>
+
+</ion-content>
