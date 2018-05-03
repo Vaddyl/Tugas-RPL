@@ -9,4 +9,20 @@
 
 <ion-content padding>
 
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="data.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="data.password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button (click)="login()">Login</button>
+  <button ion-button (click)="register()">Register</button>
+  
 </ion-content>

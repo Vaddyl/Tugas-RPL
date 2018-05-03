@@ -10,9 +10,12 @@ import { P3kPage } from '../pages/p3k/p3k';
 import { StatsPage } from '../pages/stats/stats';
 import { HelpPage } from '../pages/help/help';
 import { TabsPage } from '../pages/tabs/tabs';
+import { RegisterPage } from '../pages/register/register';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DataProvider } from '../providers/data/data';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     P3kPage,
     StatsPage,
     HelpPage,
-    TabsPage
+    TabsPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpModule
   ],
   bootstrap: [IonicApp],
@@ -37,12 +42,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     P3kPage,
     StatsPage,
     HelpPage,
-    TabsPage
+    TabsPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider
   ]
 })
 export class AppModule {}

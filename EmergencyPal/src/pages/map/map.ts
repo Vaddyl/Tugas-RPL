@@ -62,7 +62,7 @@ export class MapPage {
           google.maps.event.addListener(markIt,'click', ((markIt)=>{
             return () => {
                 console.log(markIt.name);
-                this.navCtrl.push(LokasiPage);
+                //this.navCtrl.push(LokasiPage);
             };
           })(markIt));
           //console.log(mark.name);
