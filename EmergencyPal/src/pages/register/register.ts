@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, AlertController, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, AlertController, ToastController, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
@@ -13,7 +14,7 @@ export class RegisterPage {
   passCheck = false;
   regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams, public http: Http) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public alertCtrl: AlertController, public navParams: NavParams, public http: Http) {
     this.data.name = '';
     this.data.username = '';
     this.data.email = '';
@@ -29,23 +30,26 @@ export class RegisterPage {
 
   check(){
     if(this.data.name === '' || this.data.username === '' || this.data.email === '' || this.data.password === '' || this.data.repassword === ''){
-      let alert = this.alertCtrl.create({
-        title: 'Harap mengisi seluruh data!',
-        buttons: ['OK']
+      let toast = this.toastCtrl.create({
+        message: 'Harap isi seluruh data',
+        duration: 2000,
+        position: 'bottom'
       });
-      alert.present();
+      toast.present();
     } else if(this.data.password !== this.data.repassword) {
-      let alert = this.alertCtrl.create({
-        title: 'Password yang anda masukkan berbeda!',
-        buttons: ['OK']
+      let toast = this.toastCtrl.create({
+        message: 'Password yang Anda masukkan berbeda',
+        duration: 2000,
+        position: 'bottom'
       });
-      alert.present();
+      toast.present();
     } else if(this.regexp.test(this.data.email) == false) {
-      let alert = this.alertCtrl.create({
-        title: 'Mohon periksa kembali email yang anda masukkan!',
-        buttons: ['OK']
+      let toast = this.toastCtrl.create({
+        message: 'Mohon periksa kembali email yang Anda masukkan',
+        duration: 2000,
+        position: 'bottom'
       });
-      alert.present();
+      toast.present();
     } else {
       this.register();
     }
@@ -58,12 +62,13 @@ export class RegisterPage {
     this.http.post(link, newUser).subscribe(data => {
       this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
       // console.log(this.data.response);
+      this.navCtrl.setRoot(TabsPage);
       let alert = this.alertCtrl.create({
-        title: 'Register Success!',
+        title: 'Hallo!',
+        subTitle: 'Selamat datang di EmergencyPal',
         buttons: ['OK']
       });
       alert.present();
-      this.navCtrl.push(LoginPage);
     }, error => {
       console.log("Oooops!");
     });

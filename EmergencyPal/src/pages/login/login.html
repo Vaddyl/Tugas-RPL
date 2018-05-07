@@ -1,13 +1,9 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Welcome</ion-title>
-  </ion-navbar>
-</ion-header>
-
-
 <ion-content padding>
 
+  <br>
   <img src="assets/imgs/EmergencyPAL.png"/>
+
+  <br>
   <ion-list>
     <ion-item>
       <ion-label floating>Username</ion-label>
@@ -22,11 +18,11 @@
 
   <button ion-button item-right class="padright" (click)="login()">Login</button>
 
-  <br><br>
+  <br><br><br>
   <p>Belum punya akun? <a (click)="register()">Register akun</a></p>
   
   <ion-fab bottom right>
-    <img src="assets/imgs/alert.png\"/>
+    <button (click)="emergency()"><img src="assets/imgs/alert.png\" /></button>
   </ion-fab>
 
 </ion-content>

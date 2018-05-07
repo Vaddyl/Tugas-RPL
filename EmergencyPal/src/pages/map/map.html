@@ -1,11 +1,41 @@
 <ion-header>
+    <ion-toolbar color="custom2" #content>
 
-  <ion-navbar>
-    <ion-title>Map</ion-title>
-  </ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="md-menu"></ion-icon>
+      </button>
 
+      <ion-title>Map</ion-title>
+
+    </ion-toolbar>
 </ion-header>
 
+<ion-menu [content]="content">
+  <ion-header>
+      <ion-item color="custom">
+        <ion-avatar item-start>
+          <img src="assets/imgs/satania.jpg">
+        </ion-avatar>
+        <ion-title>Fadillah AN</ion-title>
+      </ion-item>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item icon-left>
+        <ion-icon name="md-person" color="custom1"></ion-icon>
+        Profile
+      </button>
+      <button ion-item icon-left>
+        <ion-icon name="ios-alert-outline" color="custom1"></ion-icon>
+        About
+      </button>
+      <button ion-item icon-left>
+        <ion-icon name="ios-log-out-outline" color="custom1"></ion-icon>
+        Logout
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
 <ion-content>
   <div #map id="map"></div>

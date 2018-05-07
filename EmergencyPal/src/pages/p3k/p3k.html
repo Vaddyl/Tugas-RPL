@@ -1,12 +1,92 @@
 <ion-header>
+    <ion-toolbar color="custom2" #content>
 
-  <ion-navbar>
-    <ion-title>P3K</ion-title>
-  </ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="md-menu"></ion-icon>
+      </button>
 
+      <ion-title>First Aid</ion-title>
+
+    </ion-toolbar>
 </ion-header>
 
+<ion-menu [content]="content">
+  <ion-header>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/satania.jpg">
+        </ion-avatar>
+        <ion-title>Fadillah AN</ion-title>
+      </ion-item>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item icon-left>
+        <ion-icon name="md-person"></ion-icon>
+        Profile
+      </button>
+      <button ion-item icon-left>
+        <ion-icon name="ios-alert-outline"></ion-icon>
+        About
+      </button>
+      <button ion-item icon-left>
+        <ion-icon name="ios-log-out-outline"></ion-icon>
+        Logout
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
 <ion-content padding>
+
+  <ion-card>
+    <img src="assets/imgs/pingsan.png"/>
+    <ion-card-content>
+      <ion-card-title>Pingsan</ion-card-title>
+      <p>
+          Pingsan dapat terjadi saat seseorang tiba-tiba kehilangan
+          kesadaran karena aliran darah ke otak tidak mencukupi.
+      </p>
+    </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="md-thumbs-up"></ion-icon>
+            <div>47 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="md-book"></ion-icon>
+            <div>Read more</div>
+          </button>
+        </ion-col>
+      </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/imgs/lukaSobek.jpg"/>
+    <ion-card-content>
+      <ion-card-title>Luka Sobek</ion-card-title>
+      <p>
+        Luka sobek sebaiknya diperiksakan pada dokter untuk melihat kondisi,
+        kedalaman, dan kebersihan luka agar dapat diberikan penanganan yang tepat.
+      </p>
+    </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="md-thumbs-up"></ion-icon>
+            <div>18 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="md-book"></ion-icon>
+            <div>Read more</div>
+          </button>
+        </ion-col>
+      </ion-row>
+  </ion-card>
 
 </ion-content>
