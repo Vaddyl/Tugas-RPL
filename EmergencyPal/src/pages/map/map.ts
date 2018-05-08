@@ -52,13 +52,21 @@ export class MapPage {
 
   addMarker(marker, map){
     for(let mark of marker){
-          //console.log(mark);
           var position = new google.maps.LatLng(mark.lat, mark.lng);
-          var markIt = new google.maps.Marker({
-            position: position,
-            map: map,
-            name: mark.name
-          });
+          if(mark.type === "hospital"){
+                var markIt = new google.maps.Marker({
+                  position: position,
+                  map: map,
+                  icon: "assets/imgs/hospital.png",
+                  name: mark
+                });
+          } else {
+                var markIt = new google.maps.Marker({
+                  position: position,
+                  map: map,
+                  name: mark
+                });
+          }
           google.maps.event.addListener(markIt,'click', ((markIt)=>{
             return () => {
                 console.log(markIt.name);
