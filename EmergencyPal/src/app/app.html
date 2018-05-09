@@ -1,1 +1,23 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/satania.jpg">
+          </ion-avatar>
+          <ion-title>Fadillah AN</ion-title>
+        </ion-item>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                {{p.title}}
+            </button>
+            <button ion-item color="danger" (click)="logout()">
+                Logout    
+            </button>
+        </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+  

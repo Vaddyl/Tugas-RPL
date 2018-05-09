@@ -11,6 +11,8 @@ import { StatsPage } from '../pages/stats/stats';
 import { HelpPage } from '../pages/help/help';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RegisterPage } from '../pages/register/register';
+import { ProfilePage } from '../pages/profile/profile';
+import { AboutPage } from '../pages/about/about';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +28,9 @@ import { IonicStorageModule } from '@ionic/storage';
     StatsPage,
     HelpPage,
     TabsPage,
-    RegisterPage
+    RegisterPage,
+    ProfilePage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,9 @@ import { IonicStorageModule } from '@ionic/storage';
     StatsPage,
     HelpPage,
     TabsPage,
-    RegisterPage
+    RegisterPage,
+    ProfilePage,
+    AboutPage
   ],
   providers: [
     StatusBar,
