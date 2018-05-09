@@ -3,7 +3,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-//import { DataProvider } from '../providers/data/data';
+import { DataProvider } from '../providers/data/data';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
@@ -14,19 +14,29 @@ import { AboutPage } from '../pages/about/about';
   templateUrl: 'app.html'
 })
 export class MyApp {
+
+  name: string;
+  username: string;
+  email: string;
+
   @ViewChild(Nav) nav: Nav;
   rootPage:any = LoginPage;
   pages: Array<{title: string, component: any}>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menu: MenuController) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menu: MenuController, public dataStorage: DataProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      this.dataStorage.getDataUser().then((data) => {
+         this.name = data.name;
+         this.username = data.username;
+         this.email = data.email;
+       })
     });
 
-    this.pages = [
+  this.pages = [
       { title: 'Profile', component: ProfilePage },
       { title: 'About', component: AboutPage }
     ];

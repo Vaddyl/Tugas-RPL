@@ -4,7 +4,7 @@
           <ion-avatar item-start>
             <img src="assets/imgs/satania.jpg">
           </ion-avatar>
-          <ion-title>Fadillah AN</ion-title>
+          <ion-title>Hello, {{name}}</ion-title>
         </ion-item>
     </ion-header>
     <ion-content>
@@ -13,11 +13,10 @@
                 {{p.title}}
             </button>
             <button ion-item color="danger" (click)="logout()">
-                Logout    
+                Logout
             </button>
         </ion-list>
     </ion-content>
   </ion-menu>
 
   <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
-  

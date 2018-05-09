@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
 
+import { DataProvider } from '../../providers/data/data';
 
 @Component({
   selector: 'page-login',
@@ -13,7 +14,7 @@ export class LoginPage {
 
   data:any = {};
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public http: Http) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public http: Http, public dataStorage: DataProvider) {
       this.data.username = "";
       this.data.password = "";
       this.data.response = "";
@@ -32,8 +33,9 @@ export class LoginPage {
       this.http.post(link, newLogin).subscribe(data => {
         let response = data.json();
         // this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
-        console.log(response);
         if(response.status == "200"){
+          // console.log(response.data);
+          this.dataStorage.login(response.data, "user");
           this.loading();
           this.navCtrl.setRoot(TabsPage);
         } else {
