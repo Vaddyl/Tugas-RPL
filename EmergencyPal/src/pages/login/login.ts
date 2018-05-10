@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, LoadingController, ToastController, App } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
+import { MyApp } from '../../app/app.component';
 
 import { DataProvider } from '../../providers/data/data';
 
@@ -14,7 +15,7 @@ export class LoginPage {
 
   data:any = {};
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public http: Http, public dataStorage: DataProvider) {
+  constructor(public app: App, public navCtrl: NavController, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public http: Http, public dataStorage: DataProvider) {
       this.data.username = "";
       this.data.password = "";
       this.data.response = "";
@@ -37,7 +38,8 @@ export class LoginPage {
           // console.log(response.data);
           this.dataStorage.login(response.data, "user");
           this.loading();
-          this.navCtrl.setRoot(TabsPage);
+          this.app.getRootNav().setRoot(MyApp);
+          //this.navCtrl.setRoot(TabsPage);
         } else {
           // If account not found
           let toast = this.toastCtrl.create({

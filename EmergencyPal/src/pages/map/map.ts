@@ -55,7 +55,8 @@ export class MapPage {
       zoom: 15,
       streetViewControl: false,
       mapTypeId: 'roadmap',
-      styles: myStyles
+      styles: myStyles,
+      fullscreenControl: false // Kalo diklik bakalan error
     };
 
     this.map = new google.maps.Map(this.mapRef.nativeElement, options);
