@@ -4,6 +4,8 @@ import { Http } from '@angular/http';
 
 import { DataProvider } from '../../providers/data/data';
 
+import { LocationPage } from '../location/location';
+
 declare var google: any;
 
 @Component({
@@ -70,20 +72,22 @@ export class MapPage {
                   position: position,
                   map: map,
                   icon: "assets/imgs/hospital.png",
-                  name: mark
+                  id: mark.id
                 });
           } else {
                 var markIt = new google.maps.Marker({
                   position: position,
                   map: map,
-                  name: mark
+                  id: mark.id
                 });
           }
+          this.dataStorage.storeMarkerById(mark.id, mark);
           google.maps.event.addListener(markIt,'click', ((markIt)=>{
             return () => {
-                console.log(markIt.name);
-                // not yet
-                // this.navCtrl.push(LokasiPage);
+                // console.log(markIt.id);
+                this.navCtrl.push(LocationPage, {
+                  id: markIt.id
+                });
             };
           })(markIt));
           //console.log(mark.name);
@@ -97,7 +101,8 @@ export class MapPage {
       //this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
       //console.log(this.data.response);
       this.addMarker(response, this.map);
-      // console.log(response);
+      //this.dataStorage.storeMarker(response);
+      console.log(response);
     }, error => {
       return "fail";
       //console.log("Oooops!");

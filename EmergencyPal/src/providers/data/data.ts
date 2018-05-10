@@ -30,8 +30,15 @@ export class DataProvider {
     });
   }
 
-  getMap() {
+  storeMarkerById(id: number, data: any) {
+    this.storage.set(id.toString(), data);
+  }
+
+  getMap(id: number) {
     // fetch data untuk marker yg dipilih
+    return this.storage.get(id.toString()).then((value) => {
+      return value;
+    });
   }
 
   getDataUser() {

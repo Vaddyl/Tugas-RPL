@@ -13,6 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { RegisterPage } from '../pages/register/register';
 import { ProfilePage } from '../pages/profile/profile';
 import { AboutPage } from '../pages/about/about';
+import { LocationPage } from '../pages/location/location';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,7 +31,8 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage,
     RegisterPage,
     ProfilePage,
-    AboutPage
+    AboutPage,
+    LocationPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage,
     RegisterPage,
     ProfilePage,
-    AboutPage
+    AboutPage,
+    LocationPage
   ],
   providers: [
     StatusBar,
