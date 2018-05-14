@@ -43,7 +43,7 @@ export class LoginPage {
         } else {
           // If account not found
           let toast = this.toastCtrl.create({
-            message: 'Username atau password salah',
+            message: 'Incorrect username or password',
             duration: 3000,
             position: 'bottom'
           });
@@ -61,7 +61,7 @@ export class LoginPage {
 
   loading(){
     let loader = this.loadingCtrl.create({
-      content: "Mohon tunggu...",
+      content: "Please wait...",
       duration: 2000
     });
     loader.present();

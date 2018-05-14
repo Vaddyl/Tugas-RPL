@@ -1,42 +1,31 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Register Akun</ion-title>
-  </ion-navbar>
-</ion-header>
-
-
-<ion-content padding>
-
-  <ion-list>
-
-    <ion-item>
-      <ion-label stacked>Nama</ion-label>
-      <ion-input type="text" name="name" [(ngModel)]="data.name"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input type="email" name="email" [(ngModel)]="data.email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Username</ion-label>
-      <ion-input type="text" name="username" [(ngModel)]="data.username"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input type="password" name="password" [(ngModel)]="data.password"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Retype Password</ion-label>
-      <ion-input type="password" name="repassword" [(ngModel)]="data.repassword"></ion-input>
-    </ion-item>
-
-  </ion-list>
-
-  <!-- Execute the register function -->
-  <button ion-button class="padright" (click)="check()">Register</button>
-
+<ion-content padding class="bg-img">
+  <ion-card>
+    <ion-card-header>
+      Register Form
+    </ion-card-header>
+    <ion-card-content>
+       <ion-list no-line>
+          <ion-item>
+            <ion-input type="text" name="name" [(ngModel)]="data.name" placeholder="Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" name="email" [(ngModel)]="data.email" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" name="phone" [(ngModel)]="data.phone" placeholder="Phone Number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" name="username" [(ngModel)]="data.username" placeholder="Username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" name="password" [(ngModel)]="data.password" placeholder="Password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" name="repassword" [(ngModel)]="data.repassword" placeholder="Retype Password"></ion-input>
+          </ion-item>
+          <button ion-button block (click)="check()">Create Account</button>
+       </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button clear full color="light" (click)="popThis()">Cancel</button>
 </ion-content>

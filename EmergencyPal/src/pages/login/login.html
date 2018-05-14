@@ -1,28 +1,26 @@
-<ion-content padding>
+<ion-content padding class="bg-img">
 
-  <br>
   <img src="assets/imgs/EmergencyPAL.png"/>
 
-  <br>
-  <ion-list>
-    <ion-item>
-      <ion-label floating>Username</ion-label>
-      <ion-input type="text" value="username" [(ngModel)]="data.username"></ion-input>
-    </ion-item>
+  <ion-card>
+    <ion-card-header>
+      Login Form
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-line>
+        <ion-item>
+          <ion-input type="text" value="username" [(ngModel)]="data.username" placeholder="Username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" value="password" [(ngModel)]="data.password" placeholder="Password"></ion-input>
+        </ion-item>
+        <button ion-button block (click)="login()">Login</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="data.password"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <button ion-button item-right class="padright" (click)="login()">Login</button>
-
-  <br><br><br>
-  <p>Belum punya akun? <a (click)="register()">Register akun</a></p>
-  
-  <ion-fab bottom right>
-    <button (click)="emergency()"><img src="assets/imgs/alert.png\" /></button>
-  </ion-fab>
+  <button ion-button clear full color="light" (click)="register()">Don't have an account? Sign up</button>
+  <p>OR</p>
+  <button ion-button block color="danger" (click)="emergency()">Emergency situation? Click here!</button>
 
 </ion-content>

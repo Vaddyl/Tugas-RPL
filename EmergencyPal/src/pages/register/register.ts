@@ -31,21 +31,21 @@ export class RegisterPage {
   check(){
     if(this.data.name === '' || this.data.username === '' || this.data.email === '' || this.data.password === '' || this.data.repassword === ''){
       let toast = this.toastCtrl.create({
-        message: 'Harap isi seluruh data',
+        message: 'Please fill all the data field',
         duration: 2000,
         position: 'bottom'
       });
       toast.present();
     } else if(this.data.password !== this.data.repassword) {
       let toast = this.toastCtrl.create({
-        message: 'Password yang Anda masukkan berbeda',
+        message: 'The password you type does not match',
         duration: 2000,
         position: 'bottom'
       });
       toast.present();
     } else if(this.regexp.test(this.data.email) == false) {
       let toast = this.toastCtrl.create({
-        message: 'Mohon periksa kembali email yang Anda masukkan',
+        message: 'Please check your email address',
         duration: 2000,
         position: 'bottom'
       });
@@ -65,12 +65,16 @@ export class RegisterPage {
       this.navCtrl.setRoot(TabsPage);
       let alert = this.alertCtrl.create({
         title: 'Hallo!',
-        subTitle: 'Selamat datang di EmergencyPal',
+        subTitle: 'Welcome to EmergencyPal',
         buttons: ['OK']
       });
       alert.present();
     }, error => {
       console.log("Oooops!");
     });
+  }
+
+  popThis(){
+    this.navCtrl.pop();
   }
 }
