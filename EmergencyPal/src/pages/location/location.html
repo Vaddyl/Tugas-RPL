@@ -5,35 +5,20 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>location</ion-title>
+  <ion-navbar color="custom2">
+    <ion-title>Location</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-
-  <ion-list>
-    <ion-item>
-      <ion-icon name="person" item-left></ion-icon>
-       <font size="3">Name</font>
-       <p>{{name}}</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="mail" item-left></ion-icon>
-       <font size="3">Address</font>
-       <p>{{address}}</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="contact" item-left></ion-icon>
-       <font size="3">Contact</font>
-       <p>{{contact}}</p>
-    </ion-item>
-
-  </ion-list>
-
+    <img src="assets/imgs/rs-antam-medika.jpg">
+    <h4>{{name}}</h4>
+    <ion-icon name="ios-star"></ion-icon>
+    4.2
+    <p>{{address}}</p>
+    <button ion-button block icon-left>
+      <ion-icon name="ios-call"></ion-icon>
+      {{contact}}
+    </button>
 </ion-content>
