@@ -1,42 +1,38 @@
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="custom1">
     <ion-title>Profile</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-card>
+    <img src="assets/imgs/satania.jpg">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="ios-person" item-left></ion-icon>
+           <font size="3">Name</font>
+           <p>{{name}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="ios-contact" item-left></ion-icon>
+           <font size="3">Username</font>
+           <p>{{username}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="ios-mail" item-left></ion-icon>
+           <font size="3">Email</font>
+           <p>{{email}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="ios-call" item-left></ion-icon>
+           <font size="3">Phone Number</font>
+           <p>{{name}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
-
-  	<ion-list>
-      <ion-item>
-        <ion-icon name="person" item-left></ion-icon>
-         <font size="3">Name</font>
-         <p>{{name}}</p>
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="contact" item-left></ion-icon>
-         <font size="3">Username</font>
-         <p>{{username}}</p>
-      </ion-item>
-
-  	  <ion-item>
-  	    <ion-icon name="mail" item-left></ion-icon>
-  	     <font size="3">Email</font>
-  	     <p>{{email}}</p>
-      </ion-item>
-      
-      <ion-item>
-  	    <ion-icon name="mail" item-left></ion-icon>
-  	     <font size="3">Phone Number</font>
-  	     <p>{{name}}</p>
-      </ion-item>
-
-      <button ion-button item-right class="padright" (click)="changeProfile()">Change Profile</button>
-
-    </ion-list>
-
+  <button ion-button block>Edit Profile</button>
+  <button ion-button block>Edit Password</button>
 </ion-content>
