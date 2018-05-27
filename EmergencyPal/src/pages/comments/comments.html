@@ -8,6 +8,20 @@
 
 
 <ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      {{name}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea placeholder="Add comment here">
+      </ion-textarea>
+      <ion-buttons end>
+        <button ion-button small clear>
+          Post
+        </button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
   <ion-card *ngFor="let comment of comments">
     <ion-card-header>
       {{comment.author}}
