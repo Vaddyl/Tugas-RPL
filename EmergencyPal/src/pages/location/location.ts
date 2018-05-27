@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CommentsPage } from '../comments/comments';
 
 import { DataProvider } from '../../providers/data/data';
-/**
- * Generated class for the LocationPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -41,6 +36,10 @@ export class LocationPage {
      this.img = data.img;
      this.review = data.review;
    })
+  }
+
+  goToCommentsPage() {
+    this.navCtrl.push(CommentsPage);
   }
 
 }
