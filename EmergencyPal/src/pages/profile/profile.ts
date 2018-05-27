@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { DataProvider } from '../../providers/data/data';
+import { EditProfilePage } from '../edit-profile/edit-profile';
 
 @Component({
   selector: 'page-profile',
@@ -12,6 +13,7 @@ export class ProfilePage {
   name: string;
   username: string;
   email: string;
+  contact: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataStorage: DataProvider) {
   }
@@ -22,10 +24,16 @@ export class ProfilePage {
 
   ionViewWillEnter() {
    this.dataStorage.getDataUser().then((data) => {
+     // console.log(data);
      this.name = data.name;
      this.username = data.username;
      this.email = data.email;
+     this.contact = data.contact;
    })
+  }
+
+  editProfile(){
+    this.navCtrl.push(EditProfilePage);
   }
 
 }

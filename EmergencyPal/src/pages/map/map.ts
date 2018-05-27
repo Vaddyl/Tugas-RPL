@@ -43,6 +43,11 @@ export class MapPage {
   displayMap(){
     // Trial location
     var location = new google.maps.LatLng(-6.191503, 106.903563);
+    let geocoder = new google.maps.Geocoder;
+      geocoder.geocode({'location': location}, (results, status) => {
+         console.log(results[3].formatted_address); // read data from here
+         console.log(status);
+      });
     var myStyles =[
       {
           featureType: "poi",
@@ -62,6 +67,13 @@ export class MapPage {
     };
 
     this.map = new google.maps.Map(this.mapRef.nativeElement, options);
+
+    // Location of the user
+    var markIt = new google.maps.Marker({
+      position: location,
+      map: this.map,
+      icon: "assets/imgs/alert1.png",
+    });
   }
 
   addMarker(marker, map){

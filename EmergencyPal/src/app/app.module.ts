@@ -14,6 +14,7 @@ import { RegisterPage } from '../pages/register/register';
 import { ProfilePage } from '../pages/profile/profile';
 import { AboutPage } from '../pages/about/about';
 import { LocationPage } from '../pages/location/location';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,7 +33,8 @@ import { IonicStorageModule } from '@ionic/storage';
     RegisterPage,
     ProfilePage,
     AboutPage,
-    LocationPage
+    LocationPage,
+    EditProfilePage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { IonicStorageModule } from '@ionic/storage';
     RegisterPage,
     ProfilePage,
     AboutPage,
-    LocationPage
+    LocationPage,
+    EditProfilePage
   ],
   providers: [
     StatusBar,

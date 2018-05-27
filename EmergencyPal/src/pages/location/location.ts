@@ -20,6 +20,8 @@ export class LocationPage {
   name: string;
   address: string;
   contact: string;
+  img: string;
+  review: number;
 
   constructor(public dataStorage: DataProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.id = navParams.get('id');
@@ -36,6 +38,8 @@ export class LocationPage {
      this.name = data.name;
      this.address = data.address;
      this.contact = data.contact;
+     this.img = data.img;
+     this.review = data.review;
    })
   }
 

@@ -1,10 +1,10 @@
 <ion-menu [content]="content">
     <ion-header>
-        <ion-item color="custom1">
+        <ion-item color="custom2">
           <ion-avatar item-start>
             <img src="assets/imgs/satania.jpg">
           </ion-avatar>
-          <ion-title>#nama user</ion-title>
+          <ion-title>Hallo!</ion-title>
         </ion-item>
     </ion-header>
     <ion-content>
@@ -12,7 +12,7 @@
             <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
                 {{p.title}}
             </button>
-            <button ion-item color="custom1" (click)="logout()">
+            <button ion-item (click)="logout()">
                 Logout
             </button>
         </ion-list>

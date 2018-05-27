@@ -12,7 +12,7 @@ export class DataProvider {
     console.log('Hello DataProvider Provider');
   }
 
-  login(data : any,role:string) {
+  login(data: any, role:string) {
     this.storage.set(this.HAS_LOGGED_IN, true);
     this.storage.set('user_data', data);
     this.storage.set('role', role);

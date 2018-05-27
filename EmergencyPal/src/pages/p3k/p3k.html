@@ -11,52 +11,22 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-card>
-    <img src="assets/imgs/pingsan.png"/>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-card *ngFor="let item of items">
+    <img src="{{item.img}}"/>
     <ion-card-content>
-      <ion-card-title>Pingsan</ion-card-title>
+      <ion-card-title>{{item.title}}</ion-card-title>
       <p>
-          Pingsan dapat terjadi saat seseorang tiba-tiba kehilangan
-          kesadaran karena aliran darah ke otak tidak mencukupi.
+        {{item.wording}}
       </p>
     </ion-card-content>
       <ion-row>
         <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="md-thumbs-up"></ion-icon>
-            <div>47 Likes</div>
-          </button>
         </ion-col>
         <ion-col>
-          <button ion-button icon-left clear small>
+          <button ion-button (click)="openUrl(item.link_ref)" icon-left clear small>
             <ion-icon name="md-book"></ion-icon>
-            <div>Read more</div>
-          </button>
-        </ion-col>
-      </ion-row>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/imgs/lukaSobek.jpg"/>
-    <ion-card-content>
-      <ion-card-title>Luka Sobek</ion-card-title>
-      <p>
-        Luka sobek sebaiknya diperiksakan pada dokter untuk melihat kondisi,
-        kedalaman, dan kebersihan luka agar dapat diberikan penanganan yang tepat.
-      </p>
-    </ion-card-content>
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="md-thumbs-up"></ion-icon>
-            <div>18 Likes</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="md-book"></ion-icon>
-            <div>Read more</div>
+            <div>Read More</div>
           </button>
         </ion-col>
       </ion-row>
