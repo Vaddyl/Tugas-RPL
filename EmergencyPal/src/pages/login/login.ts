@@ -56,7 +56,7 @@ export class LoginPage {
 
   emergency(){
     this.loading();
-    this.navCtrl.setRoot(TabsPage);
+    // this.navCtrl.push(MapPageOnly);
   }
 
   loading(){

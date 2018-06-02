@@ -114,7 +114,7 @@ export class MapPage {
       //console.log(this.data.response);
       this.addMarker(response, this.map);
       //this.dataStorage.storeMarker(response);
-      console.log(response);
+      // console.log(response);
     }, error => {
       return "fail";
       //console.log("Oooops!");

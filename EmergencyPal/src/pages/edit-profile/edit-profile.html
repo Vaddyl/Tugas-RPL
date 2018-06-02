@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="custom2">
     <ion-title>Edit Profile</ion-title>
   </ion-navbar>
 
@@ -14,13 +14,13 @@
 	</ion-item>
 
 	<ion-item>
-	    <ion-label stacked color="dark"><font size="2">Nomor Telepon</font></ion-label>
-	    <ion-input placeholder="nomor telepon" [(ngModel)]="no_tel_doctor" type="text" value="{{no_tel_doctor}}" required></ion-input>
+	    <ion-label stacked color="dark"><font size="2">Email</font></ion-label>
+	    <ion-input placeholder="nomor telepon" [(ngModel)]="email" type="email" required></ion-input>
 	</ion-item>
 
   <ion-item>
-      <ion-label stacked color="dark"><font size="2">Alamat</font></ion-label>
-      <ion-input placeholder="nomor telepon" [(ngModel)]="no_tel_doctor" type="text" value="{{no_tel_doctor}}" required></ion-input>
+      <ion-label stacked color="dark"><font size="2">Contact</font></ion-label>
+      <ion-input placeholder="nomor telepon" [(ngModel)]="contact" type="text" required></ion-input>
   </ion-item>
 
 <button ion-button block (click)='simpanProfil()'>SIMPAN</button>

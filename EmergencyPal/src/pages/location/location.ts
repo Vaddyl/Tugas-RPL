@@ -39,7 +39,9 @@ export class LocationPage {
   }
 
   goToCommentsPage() {
-    this.navCtrl.push(CommentsPage);
+    this.navCtrl.push(CommentsPage, {
+      id: this.id
+    });
   }
 
 }

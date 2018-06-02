@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="custom2">
     <ion-title>Comments</ion-title>
   </ion-navbar>
 
@@ -10,13 +10,13 @@
 <ion-content padding>
   <ion-card>
     <ion-card-header>
-      {{name}}
+      {{data.name}}
     </ion-card-header>
     <ion-card-content>
-      <ion-textarea placeholder="Add comment here">
+      <ion-textarea [(ngModel)]="data.comment" placeholder="Add comment here">
       </ion-textarea>
       <ion-buttons end>
-        <button ion-button small clear>
+        <button (click)="postcomment()" ion-button small clear>
           Post
         </button>
       </ion-buttons>
@@ -24,10 +24,10 @@
   </ion-card>
   <ion-card *ngFor="let comment of comments">
     <ion-card-header>
-      {{comment.author}}
+      {{comment.name}}
     </ion-card-header>
     <ion-card-content>
-      {{comment.content}}
+      {{comment.comment}}
     </ion-card-content>
   </ion-card>
 </ion-content>
