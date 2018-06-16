@@ -1,0 +1,131 @@
+{
+    "items": [
+        {
+            "name": "Map",
+            "children": [
+                {
+                    "name": "Di kota mana saja saya bisa menggunakan aplikasi EmergencyPal",
+                    "children": [
+                        {
+                            "name": "Mohon maaf karena untuk saat ini, aplikasi EmergencyPal baru bisa digunakan di DKI Jakarta"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bagaimana cara melihat keterangan rumah sakit terdekat",
+                    "children": [
+                        {
+                            "name": "Anda dapat menekan icon merah yang muncul di sekitar lokasi Anda untuk melihat informasi rumah sakit terdekat"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bagaimana cara menghubungi rumah sakit terdekat",
+                    "children": [
+                        {
+                            "name": "Setelah menekan icon merah, Anda dapat menekan nomor telepon yang muncul pada halaman informasi rumah sakit"
+                        }
+                    ]
+                },
+                {
+                    "name": "Saya ingin memberi rating ke rumah sakit yang telah saya kunjungi",
+                    "children": [
+                        {
+                            "name": "Pemberian rating dilakukan melalui Google. Cari nama rumah sakit yang ingin di-rating, lalu tulis ulasan Anda menggunakan akun Google"
+                        }
+                    ]
+                },
+                {
+                    "name": "Saya ingin memberi komentar mengenai rumah sakit yang telah saya kunjungi",
+                    "children": [
+                        {
+                            "name": "Setelah menekan icon merah, Anda dapat menekan 'SEE ALL COMMENTS' yang berada di bagian paling bawah pada halaman informasi rumah sakit. Anda dapat menulis dan melihat komentar dari para pengguna aplikasi EmergencyPal"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "First Aid",
+            "children": [
+                {
+                    "name": "Bagaimana cara melihat artikel secara lengkap",
+                    "children": [
+                        {
+                            "name": "Setelah menemukan header artikel yang ingin dibaca, Anda dapat menekan 'READ MORE' yang berada di bagian kanan bawah header artikel untuk membaca artikel secara lengkap"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bagaimana cara mencari artikel yang ingin dibaca",
+                    "children": [
+                        {
+                            "name": "Masukkan keyword dari artikel yang ingin Anda baca pada bagian search tab yang ada di bagian paling atas"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bagaimana jika artikel yang ingin dibaca tidak ada",
+                    "children": [
+                        {
+                            "name": "Anda dapat me-request artikel yang belum ada melalui email. Silahkan kirim email yang berisi kritik atau saran ke emergencypal@gmail.com"
+                        }
+                    ]
+                },
+                {
+                    "name": "Saya ingin me-request artikel untuk diterbitkan",
+                    "children": [
+                        {
+                            "name": "Silahkan kirim email yang berisi kritik atau saran ke emergencypal@gmail.com"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "My Account",
+            "children": [
+                {
+                    "name": "Bagaimana cara melihat data akun saya",
+                    "children": [
+                        {
+                            "name": "Anda dapat menekan menu bar yang berada di kiri atas, lalu pilih Profile untuk melihat data akun Anda"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bagaimana cara mengedit data akun saya",
+                    "children": [
+                        {
+                            "name": "Pada bagian bawah halaman Profile, Anda dapat menekan 'EDIT PROFILE' untuk mengubah data akun Anda. Jika Anda ingin mengganti nomor telepon, pastikan nomor telepon yang baru sedang tidak digunakan oleh pengguna lain"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bagaimana cara mengganti password akun saya",
+                    "children": [
+                        {
+                            "name": "Pada bagian bawah halaman Profile, Anda dapat menekan 'EDIT PASSWORD' untuk mengubah password lama akun Anda"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bagaimana jika akun saya diretas orang lain",
+                    "children": [
+                        {
+                            "name": "Silahkan kirim email mengenai hal ini ke emergencypal@gmail.com"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bagaimana jika saya lupa password akun saya",
+                    "children": [
+                        {
+                            "name": "Silahkan kirim email mengenai hal ini ke emergencypal@gmail.com"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
