@@ -10,8 +10,8 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list class="accordion-list">
+<ion-content padding class="accordion-list">
+  
     <!-- First Level -->
     <ion-list *ngFor="let item of information; let i = index" no-lines no-padding>
       <!-- Toggle Button -->
@@ -47,5 +47,5 @@
         </ion-list>
       </ion-list>
     </ion-list>
-  </ion-list>
+
 </ion-content>

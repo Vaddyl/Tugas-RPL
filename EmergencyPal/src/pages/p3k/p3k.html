@@ -10,7 +10,7 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg">
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-card *ngFor="let item of items">
     <img src="{{item.img}}"/>
