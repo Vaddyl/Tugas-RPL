@@ -42,8 +42,8 @@ export class CommentsPage {
        // console.log(this.data.response);
        //this.navCtrl.setRoot(LoginPage);
        let alert = this.alertCtrl.create({
-         title: 'Posted!!',
-         subTitle: 'Your post cool!',
+         title: 'Posted!',
+         subTitle: 'Your comment has been succesfully added',
          buttons: ['OK']
        });
        alert.present();
