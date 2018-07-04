@@ -6,7 +6,7 @@ import { DataProvider } from '../../providers/data/data';
 
 import { LocationPage } from '../location/location';
 
-public declare var google: any;
+declare var google: any;
 
 @Component({
   selector: 'page-map',
@@ -19,6 +19,8 @@ export class MapPage {
   email: string;
   lat: number;
   lang: number;
+  distance: string;
+  duration: string;
 
   @ViewChild('map') mapRef: ElementRef;
   map: any;
@@ -93,8 +95,25 @@ export class MapPage {
   }
 
   addMarker(marker, map){
+    var start = new google.maps.LatLng(this.lat, this.lang);
+    var directionsService = new google.maps.DirectionsService();
     for(let mark of marker){
           var position = new google.maps.LatLng(mark.lat, mark.lng);
+          var request = {
+              origin: start,
+              destination: position,
+              travelMode: 'DRIVING'
+          };
+          directionsService.route(request, (response, status) => {
+            if (status == 'OK') {
+              mark.distance = response.routes[0].legs[0].distance.text;
+              mark.duration = response.routes[0].legs[0].duration.text;
+              this.dataStorage.storeMarkerById(mark.id, mark);
+            } else {
+              mark.distance = '0 km';
+              mark.duration = '0 mins';
+            }
+          });
           if(mark.type === "hospital"){
                 var markIt = new google.maps.Marker({
                   position: position,
@@ -109,15 +128,10 @@ export class MapPage {
                   id: mark.id
                 });
           }
-          this.dataStorage.storeMarkerById(mark.id, mark);
           google.maps.event.addListener(markIt,'click', ((markIt)=>{
             return () => {
                 this.navCtrl.push(LocationPage, {
-                  id: markIt.id,
-                  location_lat: mark.lat,
-                  location_lang: mark.lng,
-                  your_lat: this.lat,
-                  your_lang: this.lang
+                  id: markIt.id
                 });
             };
           })(markIt));
