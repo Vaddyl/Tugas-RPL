@@ -1,23 +1,33 @@
 <?php
-  include 'connect.php';
+  include "connect.php";
 
-  $username = $_GET['username'];
+  $postdata = file_get_contents("php://input");
+  $username = "";
+  $name = "";
+  $contact = "";
+  $trigger = 0;
 
-  $query = mysqli_query($connect, "SELECT name, email, username FROM users WHERE username='$username'");
-  if(mysqli_num_rows($query)){
-    $result_user = array();
-    while($result = mysqli_fetch_assoc($query)){
-      array_push($result_user, $result);
+  if(isset($postdata)){
+    $request = json_decode($postdata);
+    $username = $request->username;
+    $name = $request->name;
+    $contact = $request->phone;
+    $query = mysqli_query($connect, "SELECT * FROM users WHERE username='$username'");
+    if(mysqli_num_rows($query)){ // Loleeee
+      $trigger = 1;
     }
+  }
+
+  if($trigger){
+    $query_edit = mysqli_query($connect, "UPDATE users SET name='$name', contact='$contact' WHERE username='$username'");
     $data = array (
       'message' => 'success',
-      'data' => $result_user,
-      'status' => '200'
+      'status' =>  200
     );
   } else {
     $data = array (
       'message' => 'Failed',
-      'status' => '404'
+      'status' => 404
     );
   }
 

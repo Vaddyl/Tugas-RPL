@@ -11,21 +11,19 @@
 	    <ion-input placeholder="name" [(ngModel)]="name" type="text" value="{{name}}" required></ion-input>
 	</ion-item>
 
-	<ion-item>
-	    <ion-label stacked color="dark"><font size="3">Email</font></ion-label>
-	    <ion-input placeholder="email" [(ngModel)]="email" type="email" required></ion-input>
-	</ion-item>
-
   <ion-item>
       <ion-label stacked color="dark"><font size="3">Phone Number</font></ion-label>
-      <ion-input placeholder="phone number" [(ngModel)]="contact" type="text" required></ion-input>
+      <ion-input placeholder="phone number" [(ngModel)]="contact" type="text"></ion-input>
   </ion-item>
 
+  <!--
   <ion-item>
       <ion-label stacked color="dark"><font size="3">Change Profil Picture</font></ion-label>
   </ion-item>
+
   <button ion-button block (click)='openCamera()' clear>Take Photo</button>
   <button ion-button block (click)='openGallery()' clear>Select Photo</button>
+  -->
   
   <br>
   <button ion-button block (click)='simpanProfil()'>Save</button>
