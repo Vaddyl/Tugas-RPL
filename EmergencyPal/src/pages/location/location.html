@@ -11,7 +11,7 @@
     <ion-icon name="ios-star"></ion-icon>
     {{review}}
     <p style="text-align:justify"><font color="grey" size="2">{{address}}</font></p>
-    <button ion-button block icon-left>
+    <button ion-button block icon-left (click)="callNumber()">
       <ion-icon name="ios-call"></ion-icon>
       {{contact}}
     </button>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CommentsPage } from '../comments/comments';
-
+import { CallNumber } from '@ionic-native/call-number';
 import { DataProvider } from '../../providers/data/data';
 
 @IonicPage()
@@ -18,7 +18,7 @@ export class LocationPage {
   img: string;
   review: number;
 
-  constructor(public dataStorage: DataProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private call: CallNumber, public dataStorage: DataProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.id = navParams.get('id');
   }
 
@@ -36,6 +36,14 @@ export class LocationPage {
      this.img = data.img;
      this.review = data.review;
    })
+  }
+
+  async callNumber():Promise<any>{
+    try{
+      await this.call.callNumber(this.contact, true);
+    }catch(e){
+      console.error(e);
+    }
   }
 
   goToCommentsPage() {
