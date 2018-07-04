@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { DataProvider } from '../../providers/data/data';
 import { EditProfilePage } from '../edit-profile/edit-profile';
+import { EditPasswordPage } from '../edit-password/edit-password';
 
 @Component({
   selector: 'page-profile',
@@ -34,6 +35,10 @@ export class ProfilePage {
 
   editProfile(){
     this.navCtrl.push(EditProfilePage);
+  }
+
+  editPassword(){
+    this.navCtrl.push(EditPasswordPage);
   }
 
 }

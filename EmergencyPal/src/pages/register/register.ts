@@ -79,13 +79,14 @@ export class RegisterPage {
     // console.log(newUser);
     this.http.post(link, newUser).subscribe(data => {
       let response = data.json(); //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
-      console.log(response);
+      // console.log(response);
       if(response.status == 409){
         let alert = this.alertCtrl.create({
           title: 'Email or Username already taken',
           subTitle: 'Please use different email or username',
           buttons: ['OK']
         });
+        alert.present();
       } else {
         this.navCtrl.setRoot(LoginPage);
         let alert = this.alertCtrl.create({
@@ -93,8 +94,8 @@ export class RegisterPage {
           subTitle: 'Your account has been created successfully!',
           buttons: ['OK']
         });
+        alert.present();
       }
-      alert.present();
     }, error => {
       console.log("Oooops!");
     });

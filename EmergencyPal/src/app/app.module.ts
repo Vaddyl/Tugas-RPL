@@ -15,6 +15,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { AboutPage } from '../pages/about/about';
 import { LocationPage } from '../pages/location/location';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+import { EditPasswordPage } from '../pages/edit-password/edit-password';
 import { CommentsPage } from '../pages/comments/comments';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -36,6 +37,7 @@ import { IonicStorageModule } from '@ionic/storage';
     AboutPage,
     LocationPage,
     EditProfilePage,
+    EditPasswordPage,
     CommentsPage
   ],
   imports: [
@@ -58,6 +60,7 @@ import { IonicStorageModule } from '@ionic/storage';
     AboutPage,
     LocationPage,
     EditProfilePage,
+    EditPasswordPage,
     CommentsPage
   ],
   providers: [

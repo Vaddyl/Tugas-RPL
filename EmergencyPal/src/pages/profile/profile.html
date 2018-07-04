@@ -14,7 +14,7 @@
       <font size="3">Name</font>
       <p>{{name}}</p>
     </ion-item>
-    
+
     <ion-item>
       <ion-icon name="ios-ionitron" item-left></ion-icon>
       <font size="3">Username</font>
@@ -33,15 +33,15 @@
       <p>{{contact}}</p>
     </ion-item>
   </ion-list>
-  
+
   <button ion-button (click)="editProfile()" icon-start block>
     <ion-icon name="md-create"></ion-icon>
     Edit Profile
   </button>
-  
-  <button ion-button icon-start block>
+
+  <button ion-button (click)="editPassword()" icon-start block>
     <ion-icon name="ios-build"></ion-icon>
     Edit Password
   </button>
-   
+
 </ion-content>
