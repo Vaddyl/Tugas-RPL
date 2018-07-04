@@ -62,7 +62,7 @@ export class LoginPage {
   loading(){
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 2000
+      duration: 4000
     });
     loader.present();
   }

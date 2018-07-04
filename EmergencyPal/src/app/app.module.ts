@@ -22,7 +22,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DataProvider } from '../providers/data/data';
 import { IonicStorageModule } from '@ionic/storage';
-import { CallNumber } from '@ionic-native/call-number';
+import { CallNumber } from '@ionic-native/call-number'; // https://ionicframework.com/docs/native/call-number/
+import { Geolocation } from '@ionic-native/geolocation'; // https://ionicframework.com/docs/native/geolocation/
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { CallNumber } from '@ionic-native/call-number';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
-    CallNumber
+    CallNumber,
+    Geolocation
   ]
 })
 export class AppModule {}

@@ -1,12 +1,12 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
-
+import { Geolocation } from '@ionic-native/geolocation';
 import { DataProvider } from '../../providers/data/data';
 
 import { LocationPage } from '../location/location';
 
-declare var google: any;
+public declare var google: any;
 
 @Component({
   selector: 'page-map',
@@ -17,19 +17,20 @@ export class MapPage {
   name: string;
   username: string;
   email: string;
+  lat: number;
+  lang: number;
 
   @ViewChild('map') mapRef: ElementRef;
   map: any;
   data: any = {};
 
-  constructor(public dataStorage: DataProvider, public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(public geolocation: Geolocation, public dataStorage: DataProvider, public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.http = http;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
-    this.displayMap();
-    this.getMarker();
+    this.getPosition();
   }
 
   ionViewWillEnter() {
@@ -39,15 +40,30 @@ export class MapPage {
      this.email = data.email;
    })
  }
+
+ getPosition() {
+   this.geolocation.getCurrentPosition()
+     .then(
+       (location) => {
+         this.lat = location.coords.latitude,
+         this.lang = location.coords.longitude,
+         this.displayMap(location.coords.latitude, location.coords.longitude),
+         this.getMarker()
+       }
+     )
+     .catch(
+       (location) => {
+         // use dummy location
+         this.lat = -6.191503,
+         this.lang = 106.903563,
+         this.displayMap(-6.191503, 106.903563),
+         this.getMarker()
+       }
+     )
+ }
   // Display Map function
-  displayMap(){
-    // Trial location
-    var location = new google.maps.LatLng(-6.191503, 106.903563);
-    let geocoder = new google.maps.Geocoder;
-      geocoder.geocode({'location': location}, (results, status) => {
-         console.log(results[3].formatted_address); // read data from here
-         console.log(status);
-      });
+  displayMap(lat, lang){
+    var location = new google.maps.LatLng(lat, lang);
     var myStyles =[
       {
           featureType: "poi",
@@ -96,13 +112,15 @@ export class MapPage {
           this.dataStorage.storeMarkerById(mark.id, mark);
           google.maps.event.addListener(markIt,'click', ((markIt)=>{
             return () => {
-                // console.log(markIt.id);
                 this.navCtrl.push(LocationPage, {
-                  id: markIt.id
+                  id: markIt.id,
+                  location_lat: mark.lat,
+                  location_lang: mark.lng,
+                  your_lat: this.lat,
+                  your_lang: this.lang
                 });
             };
           })(markIt));
-          //console.log(mark.name);
     }
   }
 
