@@ -6,8 +6,7 @@
 
 </ion-header>
 
-
-<ion-content padding>
+<ion-content>
   <ion-card>
     <ion-card-header>
       {{data.name}}
@@ -22,7 +21,14 @@
       </ion-buttons>
     </ion-card-content>
   </ion-card>
+
+  <div *ngIf="comments?.length > 0">
   <ion-card *ngFor="let comment of comments">
+
+    <button  *ngIf="comment.user_id == data.user_id" (click)="deleteComment($event, comment.comment_id)" ion-button icon-start clear item-end float-right>
+      <ion-icon name="close"></ion-icon>
+    </button>
+
     <ion-card-header>
       {{comment.name}}
     </ion-card-header>
@@ -30,4 +36,6 @@
       {{comment.comment}}
     </ion-card-content>
   </ion-card>
+</div>
+
 </ion-content>

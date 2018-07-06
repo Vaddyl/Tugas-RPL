@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, ToastController, App } from 'ionic-angular';
+import { NavController, LoadingController, ToastController, AlertController, App } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
@@ -15,7 +15,7 @@ export class LoginPage {
 
   data:any = {};
 
-  constructor(public app: App, public navCtrl: NavController, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public http: Http, public dataStorage: DataProvider) {
+  constructor(public app: App, public navCtrl: NavController, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public http: Http, public dataStorage: DataProvider) {
       this.data.username = "";
       this.data.password = "";
       this.data.response = "";
@@ -55,8 +55,12 @@ export class LoginPage {
   }
 
   emergency(){
-    this.loading();
-    // this.navCtrl.push(MapPageOnly);
+    const alert = this.alertCtrl.create({
+      title: 'Hi!',
+      subTitle: 'Please send an email to emergencypal@gmail.com to recover your password.',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   loading(){

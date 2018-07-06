@@ -27,7 +27,6 @@ export class P3kPage {
       let response = data.json();
       //this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
       //console.log(this.data.response);
-      console.log(response.data);
       this.post = response.data;
       this.initializeItems();
     }, error => {

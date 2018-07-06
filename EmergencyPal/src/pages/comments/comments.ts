@@ -14,6 +14,7 @@ export class CommentsPage {
   //dummy
   comments = [];
   name: string;
+  comment_id: number;
 
   constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public dataStorage: DataProvider, public http: Http) {
       this.data.comment = "";
@@ -36,11 +37,8 @@ export class CommentsPage {
    postcomment(){
      var link = 'http://localhost/emergencypal/comment.php';
      var data = JSON.stringify({user_id: this.data.user_id, name: this.data.name, post_id: this.data.post_id, comment: this.data.comment});
-    // console.log(data);
      this.http.post(link, data).subscribe(data => {
        this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
-       // console.log(this.data.response);
-       //this.navCtrl.setRoot(LoginPage);
        let alert = this.alertCtrl.create({
          title: 'Posted!',
          subTitle: 'Your comment has been succesfully added',
@@ -59,14 +57,16 @@ export class CommentsPage {
      this.http.post(link, data).subscribe(data => {
        let response = data.json();
        //this.data.response = data["_body"]; //https://stackoverflow.com/questions/39574305/property-body-does-not-exist-on-type-response
-       console.log(data.json());
        this.comments = data.json();
        //this.dataStorage.storeMarker(response);
-       // console.log(response);
      }, error => {
        return "fail";
        //console.log("Oooops!");
      });
+   }
+
+   deleteComment(event, item){
+     console.log(item);
    }
 
 }
