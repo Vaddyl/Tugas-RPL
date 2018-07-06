@@ -5,22 +5,31 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="card-body">
     <div #map id="map" style="display: none;"></div>
     <img src="{{img}}" style="width: auto;">
-    <h4>{{name}}</h4>
-    <ion-icon name="ios-car"></ion-icon>
-    {{distance}}
-    <ion-icon name="ios-time"></ion-icon>
-    {{duration}}
-    <ion-icon name="ios-star"></ion-icon>
-    {{review}}
-    <p style="text-align:justify"><font color="grey" size="2">{{address}}</font></p>
+    <br><br>
+    <h4 class="name">{{name}}</h4>
+    <h2 class="star" icon-start><ion-icon name="ios-star"></ion-icon>{{review}}</h2>
+    <div class="bio">{{address}}</div>
+    <br>
+    <ion-row>
+      <ion-col class="stat">
+        <span class="label">Distance</span>
+        <span class="value">{{distance}}</span>
+      </ion-col>
+      <ion-col class="stat">
+        <span class="label">Duration</span>
+        <span class="value">{{duration}}</span>
+      </ion-col>
+      <ion-col class="stat" (click)="goToCommentsPage()">
+        <span class="label">See All</span>
+        <span class="value">Comments</span>
+      </ion-col>
+    </ion-row>
+    <br>
     <button ion-button block icon-left (click)="callNumber()">
-      <ion-icon name="ios-call"></ion-icon>
-      {{contact}}
-    </button>
-    <button ion-button full (click)="goToCommentsPage()" clear>
-      See all comments
+        <ion-icon name="ios-call"></ion-icon>
+        {{contact}}
     </button>
 </ion-content>

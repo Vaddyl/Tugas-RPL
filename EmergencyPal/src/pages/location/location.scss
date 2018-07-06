@@ -1,3 +1,45 @@
 page-location {
-
+    .card-body{
+        text-align:center;
+        padding-left: 10px;
+    }
+    .name{
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0 auto;
+    }
+    .star{
+        font-size: 16px;
+        font-weight: 300;
+        margin-top: 5px;
+      }
+    .bio{
+        font-size: 14px;
+        color: #7B7B7B;
+        font-weight: 300;
+        margin: 10px auto;
+        line-height: 20px;
+    }
+    .stat{
+        box-sizing: border-box;
+        width: calc(100% / 3);
+        float: left;
+        text-align: center;
+        border-left: 1px solid #EBEBEB;
+    }
+    .stat .label{
+        display: block;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: #95989A;
+    }
+    .stat .value{
+        display: block;
+        font-weight: 700;
+        font-size:20px;
+        margin-top: 5px;
+    }
 }
